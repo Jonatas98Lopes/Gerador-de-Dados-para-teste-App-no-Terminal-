@@ -140,12 +140,12 @@ while True:
 
         opcao_salvar_txt = validar_mensagem__salvar_txt() 
         
-        if opcao_salvar_txt == 'n':
-            exibe_valores(respostas)
-
-        else:
-            exibe_valores(respostas)
+        if opcao_salvar_txt == 's':
             salva_dados_em_txt(respostas)
+        
+        exibe_valores(respostas)
+
+        
         
        
         

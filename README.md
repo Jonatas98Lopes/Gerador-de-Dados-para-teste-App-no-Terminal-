@@ -4,7 +4,7 @@
 
 ## Descrição:
 
-Este programa gera dados aleatórios para teste. Você pode gerar com ele dados arbitrários do seguinte tipo: nomes, emails, telefones, cidades e estados.
+Este programa gera dados aleatórios para teste. Você pode gerar com ele dados arbitrários do seguinte tipo: nomes, emails, telefones, cidades e estados. Além disso, você também a possibilidade de salvar os dados criados no programa num arquivo gerado automaticamente, chamado: 'dados.txt'
 
 ***
 

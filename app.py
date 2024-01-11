@@ -59,11 +59,11 @@ def retorna_mensagem_inicial() -> str:
 def validar_mensagem_inicial() -> str:
     escolha_usuario = input(retorna_mensagem_inicial()).lower().strip()
     while True:
-        if escolha_usuario == 'parar' or escolha_usuario in ('1,2,3,4,5'):
+        if escolha_usuario != ',' and (escolha_usuario in ('1,2,3,4,5') or escolha_usuario == 'parar'):
             return escolha_usuario
         print("Ops! Parace que você digitou uma opção inválida.")
-        retorna_mensagem_inicial()
-
+        escolha_usuario = input(retorna_mensagem_inicial()).lower().strip()
+        
 
 def retorna_mensagem_salvar_txt() -> str:
     return f'{30 * "-"}{linesep}Gostaria de salvar os dados em um arquivo de texto?(s/n) '
@@ -75,7 +75,7 @@ def validar_mensagem__salvar_txt() -> str:
         if escolha_usuario == 's' or escolha_usuario == 'n':
             return escolha_usuario
         print("Ops! Parace que você digitou uma opção inválida.")
-        retorna_mensagem_salvar_txt()
+        escolha_usuario = input(retorna_mensagem_salvar_txt()).lower().strip()
 
 
 def exibe_valores(valores: list | tuple):

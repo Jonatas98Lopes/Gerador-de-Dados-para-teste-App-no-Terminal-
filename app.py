@@ -1,3 +1,5 @@
+from random import choice, choices
+
 #1. FAÇA TUDO ABAIXO:
 while True:
     pass
@@ -21,14 +23,14 @@ while True:
         # b. O PROGRAMA DEVE ENCERRADO.
         break
     #5. CASO ELE DIGITE UMA OU MAIS DAS OPÇÕES A SEGUIR: 1,2,3,4,5:
-    elif escolha_operacao in ('1', '2', '3', '4', '5'):
+    elif escolha_operacao in ('1,2,3,4,5'):
         # DEVEMOS TER UMA CONSTANTE QUE TERÁ OS NOMES QUE PODEM SER GERADOS.
         # DEVEMOS TER OUTRA CONSTANTE  QUE TERÁ OS SERVIDORES DE E-MAIL QUE PODEM SER GERADOS
         # DEVEMOS TER OUTRA CONSTANTE  QUE TERÁ OS SERVIDORES DE E-MAIL QUE PODEM SER GERADOS
         # DEVEMOS TER UMA CONSTANTE QUE TERÁ OS NOMES DAS CIDADES QUE PODEM SER GERADAS.
         # DEVEMOS TER UMA CONSTANTE  QUE TERÁ OS NOMES DOS ESTADOSQUE PODEM SER GERADOS.
         DADOS_ARBITRARIOS = {
-            '1': [  "Julia",
+            '1': (  "Julia",
                     "Enzo",
                     "Ana",
                     "Pedro",
@@ -48,15 +50,29 @@ while True:
                     "Jose",
                     "Isabel",
                     "Leonardo" 
-                ], 
-            '2': [
+                ), 
+            '2': (
                     'hotmail',
                     'outlook',
                     'gmail',
                     'yahoo'
-                 ], 
-            '3': '1234567890', 
-            '4': [  "São Paulo",
+                 ), 
+            '3': ( # Os DDs válidos no Brasil
+                "92", "97", "93", "94", "95", 
+                "96", "91", "83", "68", "69", 
+                "63", "79", "88", "81", "87", 
+                "82", "84", "83", "86", "89", 
+                "77", "75", "98", "99", "71", 
+                "73", "61", "62", "64", "65", 
+                "66", "67", "11", "12", "13", 
+                "14", "15", "16", "17", "18", 
+                "19", "21", "22", "24", "27", 
+                "28", "31", "32", "33", "34", 
+                "35", "37", "38", "41", "42", 
+                "43", "44", "45", "46", "47", 
+                "48", "49"), 
+
+            '4': (  "São Paulo",
                     "Rio de Janeiro",
                     "Belo Horizonte",
                     "Salvador",
@@ -76,8 +92,8 @@ while True:
                     "Florianópolis",
                     "João Pessoa",
                     "Vitória"
-                ], 
-            '5': [  "São Paulo",
+                ), 
+            '5': (  "São Paulo",
                     "Rio de Janeiro",
                     "Minas Gerais",
                     "Bahia",
@@ -95,10 +111,23 @@ while True:
                     "Rio Grande do Norte",
                     "Paraíba",
                     "Espirito Santo"
-                ]}
+                )}
+        opcoes_escolhidas = escolha_operacao.split(',')
         # DEVEMOS UMA VARIÁVEL RESPOSTA
+        resposta = []
        # PARA CADA UMA DAS OPÇÕES SELECIONADAS:
+        for opcao_escolhida in opcoes_escolhidas:
+            if opcao_escolhida == '3':
+                resposta.append(f'55{choice(DADOS_ARBITRARIOS[opcao_escolhida])}
+                    {choices("1234567890", k=8)}')
+                resposta.append(
         # VAMOS ARMAZENADO UM RESULTADO ARBITRÁRIOS NA VARIÁVEL RESPOSTA
+                    f'55{choice(DADOS_ARBITRARIOS[opcao_escolhida])}{choices("1234567890", k=8)}')
+
+            else:
+                resposta.append(choice(DADOS_ARBITRARIOS[opcao_escolhida]))
+
+        
 
 
 

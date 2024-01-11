@@ -56,15 +56,27 @@ def retorna_mensagem_inicial() -> str:
     return mensagem_inicial
 
 
+def remove_ultimo_caractere(string:str, ultimo_caractere: str) -> str:
+    """
+    Caso o caractere passado esteja na última posição da string, remove ele.
+    Caso contrário, retorna a string normalmente."""
+    if string[-1] == ultimo_caractere:
+        return string[:-1]
+    return string
+
+
 def validar_mensagem_inicial() -> str:
     escolha_usuario = input(retorna_mensagem_inicial()).lower().strip()
+    escolha_usuario = remove_ultimo_caractere(escolha_usuario, ',')
     while True:
-        if escolha_usuario != ',' and (escolha_usuario in ('1,2,3,4,5') or escolha_usuario == 'parar'):
+        if escolha_usuario not in('', ',')  and (escolha_usuario 
+            in ('1,2,3,4,5') or escolha_usuario == 'parar'):
             return escolha_usuario
         print(30 * '-')
         print("Ops! Parace que você digitou uma opção inválida.")
         print(30 * '-')
         escolha_usuario = input(retorna_mensagem_inicial()).lower().strip()
+        escolha_usuario = remove_ultimo_caractere(escolha_usuario, ',')
         
 
 def retorna_mensagem_salvar_txt() -> str:

@@ -61,7 +61,9 @@ def validar_mensagem_inicial() -> str:
     while True:
         if escolha_usuario != ',' and (escolha_usuario in ('1,2,3,4,5') or escolha_usuario == 'parar'):
             return escolha_usuario
+        print(30 * '-')
         print("Ops! Parace que você digitou uma opção inválida.")
+        print(30 * '-')
         escolha_usuario = input(retorna_mensagem_inicial()).lower().strip()
         
 
@@ -74,7 +76,9 @@ def validar_mensagem__salvar_txt() -> str:
     while True:
         if escolha_usuario == 's' or escolha_usuario == 'n':
             return escolha_usuario
+        print(30 * '-')
         print("Ops! Parace que você digitou uma opção inválida.")
+        print(30 * '-')
         escolha_usuario = input(retorna_mensagem_salvar_txt()).lower().strip()
 
 
